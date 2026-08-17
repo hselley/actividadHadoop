@@ -5,6 +5,9 @@
 Ej. entrada:
 
 ropa,50
+
 alimentos,10
+
 ropa,70
+
 alimentos,20
