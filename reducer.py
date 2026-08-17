@@ -6,9 +6,7 @@ def make_counts(acc, nxt):
     acc[nxt] = acc.get(nxt,0) + 1
     return acc
 
-dictionary = reduce(make_counts, sys.stdin, {})
-items = dictionary.items()
+dictionary = reduce(make_counts, map(str.strip, sys.stdin), {})
 
-for item in items:
-    for x in item:
-        print(x)
+for word, count in dictionary.items():
+    print(f'{word:<30}{count:>20}')
