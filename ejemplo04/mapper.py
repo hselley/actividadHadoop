@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 import sys
+import re
+from collections import Counter
 
-keywords = ['bueno', 'excelente', 'feliz', 'amor', 'malo', 'triste', 'odio']
+KEYWORDS = ['bueno', 'excelente', 'feliz', 'amor', 'malo', 'triste', 'odio']
 
 for line in sys.stdin:
-    words = [w.strip('.,!?":;').lower() for w in line.split()]
-    for word in words:
-        if word in keywords:
-            label = 'pos' if word in ['bueno','excelente','feliz','amor'] else 'neg'
-            print(f"{label}\t1")
+    text = line.lower()
+    words = re.findall(r'\b[a-zñáéíóúü]+\b', text)
+    counts = Counter(words)
+    
+    # Emitir solo las palabras clave con su conteo
+    for kw in KEYWORDS:
+        if counts[kw] > 0:
+            print(f"{kw}\t{counts[kw]}")

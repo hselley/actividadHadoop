@@ -11,15 +11,15 @@ El texto de ejemplo está en un archivo llamado _texto.txt_ y fue generado por u
 para fines de demostración y pruebas con Hadoop Streaming. 
 Contiene 5001 palabras exactas, con las palabras clave distribuidas naturalmente en el discurso.
 
-📊 Frecuencia aproximada de las palabras clave (para validación):
-| Palabra |	Apariciones estimadas |
-|:--:|:--:|
-| bueno	| 18 |
-| excelente	| 21 |
-| feliz	| 10 |
-| amor	| 20 |
-| malo	| 15 |
-| triste | 15 |
-| odio	| 12 |
-| Total	| 111 veces |
-
+🔍 Frecuencia de palabras clave:
+------------------------------
+excelente    |    20 | █████████████████████████ (20.4%)
+amor         |    19 | ███████████████████████░░ (19.4%)
+bueno        |    17 | █████████████████████░░░░ (17.3%)
+malo         |    15 | ██████████████████░░░░░░░ (15.3%)
+odio         |    12 | ███████████████░░░░░░░░░░ (12.2%)
+feliz        |    10 | ████████████░░░░░░░░░░░░░ (10.2%)
+triste       |     5 | ██████░░░░░░░░░░░░░░░░░░░ (5.1%)
+------------------------------
+✅ Total de palabras clave encontradas: 98
+📊 Total de palabras en el texto: 2,614

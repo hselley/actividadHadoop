@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 import sys
+from collections import defaultdict
 
-counts = {'pos': 0, 'neg': 0}
-
+total = defaultdict(int)
 for line in sys.stdin:
-    label, cnt = line.strip().split('\t')
-    counts[label] += int(cnt)
+    word, count = line.strip().split('\t')
+    total[word] += int(count)
 
-print(f"positivas\t{counts['pos']}")
-print(f"negativas\t{counts['neg']}")
+for word, count in sorted(total.items(), key=lambda x: -x[1]):
+    print(f"{word:<15}{count}")
